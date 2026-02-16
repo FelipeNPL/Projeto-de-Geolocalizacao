@@ -11,12 +11,15 @@ function App() {
 
 //armazenamos as coordinadas do hook personalizado
 //usamos um destrturamento '{ coordinates }'
-const { coordinates } = useGeolocation()
+const { coordinates, permission } = useGeolocation()
 
   return (
     <> 
     <pre> {/* mostrando valor das coordenadas */} 
       { JSON.stringify(coordinates) }
+    </pre>
+    <pre>
+      {permission} {/* como já é uma string nao precisamos do stringify */} 
     </pre>
       <Header>
         <Navbar />
